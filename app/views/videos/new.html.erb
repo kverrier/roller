@@ -1,0 +1,22 @@
+<div class="center hero-unit">
+  <h1>Roller</h1>
+
+  <form action="">
+      <input id="youtube_url" type="text" value="http://www.youtube.com/watch?v=DE9NsrKzSq8" class="xxlarge">
+      <button id="load-video-btn" type="button" class="btn">Load Video</button>
+  </form>
+
+  <div id="player"></div>
+  <div id="slider-range" class="medium"></div><div id="echo"></div>
+
+  <%= form_for @video do |f| %>
+      <%= f.hidden_field :name %> <br />
+      <%= f.hidden_field :youtube_id, :value => "DE9NsrKzSq8" %> <br />
+      <%= f.hidden_field :start_time %> <br />
+      <%= f.hidden_field :end_time %> <br />
+      <%= f.submit %>
+  <% end %>
+
+
+
+</div>

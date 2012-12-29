@@ -1,0 +1,17 @@
+<h1>Videos</h1>
+
+<ul>
+  <% for video in @videos %>
+      <li>
+        <h2><%= video.name %></h2>
+        <%= raw youtube_embed_html(video.youtube_id, video.start_time, video.end_time) %>
+        <h3>ID: <%= video.id %></h3>
+
+        <h3>YouTube ID: <%= video.youtube_id %></h3>
+
+        <h3>Start Time: <%= video.start_str %></h3>
+
+        <h3>End Time: <%= video.end_str %> </h3>
+      </li>
+  <% end %>
+</ul>
