@@ -17,7 +17,7 @@ $ ->
       orientation: "horizontal"
       range: true
       min: 0
-      max: 500
+      max: duration
       values: [ $("#video_start_time").val(), $("#video_end_time").val()]
       slide: (event, ui) ->
         clearTimeout(timer)
@@ -27,6 +27,7 @@ $ ->
 
 
   sliderChange = (event, ui) ->
+    console.log event
     start = ui.values[0]
     end = ui.values[1]
     $("#video_start_time").val(start)
@@ -79,7 +80,6 @@ $ ->
     return
 
   window.onPlayerStateChange = (event) ->
-
     clearTimeout(timer)
 
     endTime = $("#video_end_time").val()
