@@ -1,7 +1,10 @@
 module VideosHelper
   def youtube_embed_html(video_id, start_time, end_time)
     content_tag(:iframe, :src => "http://www.youtube.com/embed/#{video_id}?start=#{start_time}&end=#{end_time}".html_safe,
-                :width => "480", :height => "270", :frameborder => "0") do
+                :width => "480", 
+                :height => "270", 
+                :frameborder => "0",
+                :class => "ytplayerframe") do
     end
   end
 

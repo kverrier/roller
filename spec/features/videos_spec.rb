@@ -14,7 +14,7 @@ feature "site navigation" do
   it "test javascript", :js => true do
     visit root_path
 
-    
+
 
     fill_in 'youtube_url', :with => 'http://www.youtube.com/watch?v=23OR-m4PI_Q'
     click_button 'Load Video'
@@ -24,9 +24,6 @@ feature "site navigation" do
     find_by_id('video_youtube_id').value.should == '23OR-m4PI_Q'
     find_by_id('video_start_time').value.should == 72
     find_by_id('video_end_time').value.should == 80
-
-
-
 
     # click 'Submit'
   end

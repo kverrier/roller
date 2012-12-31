@@ -6,9 +6,18 @@ $ ->
   updateTime = ->
     $("#current-time").html(formatTime(myPlayer.getCurrentTime()))
 
+  elements =
+    player : null
+    slider : null
+    start  : null
+    end    : null
+
+  
 
   done = false
   timer = null
+  myPlayer = null
+
   id = $("#video_youtube_id").val()
   url = "http://gdata.youtube.com/feeds/api/videos?q="+id+"&max-results=1&v=2&alt=jsonc"
   $.getJSON url, (response) ->
@@ -54,8 +63,6 @@ $ ->
   firstScriptTag.parentNode.insertBefore tag, firstScriptTag
 
 
-
-  myPlayer = null
   window.onYouTubeIframeAPIReady = ->
     myPlayer = new YT.Player("player",
       height: "390"
