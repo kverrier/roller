@@ -3,6 +3,9 @@ class Video < ActiveRecord::Base
 
   validates_presence_of :end_time, :start_time, :youtube_id, :name
 
+  default_scope order: 'created_at DESC'
+
+
   def start_str
     format_time(start_time)
   end

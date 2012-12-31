@@ -1,0 +1,11 @@
+<li class="video-item">
+  <h4><%= video.name %></h4>
+  <p>
+    <span class="timestamp">
+    Posted <%= time_ago_in_words(video.created_at) %> ago.
+  	</span>
+  </p>
+
+  <%= raw youtube_embed_html(video.youtube_id, video.start_time, video.end_time) %>
+  <!-- <span class="video_id">ID: <%= video.id %></span> -->
+</li>

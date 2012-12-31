@@ -1,22 +1,10 @@
-<%= link_to "Home", root_path %>
-
 <div class="content">
   <h3>Videos</h3>
 
   <ol class="videos">
-    <% for video in @videos %>
-        <li class="video-item">
-          <h4><%= video.name %></h4>
-          <p>
-            <span class="youtube_id">YouTube ID: <%= video.youtube_id %></span>
-            <span class="start_time">Start Time: <%= video.start_str %></span>
-            <span class="end_time">End Time: <%= video.end_str %> </span>
-          </p>
-        
-          <%= raw youtube_embed_html(video.youtube_id, video.start_time, video.end_time) %>
-          <!-- <span class="video_id">ID: <%= video.id %></span> -->
-        </li>
-    <% end %>
+    <%= render @videos %>
   </ol>
-  
+  <%= will_paginate @videos %>
+
+
 </div>

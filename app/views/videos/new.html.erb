@@ -1,14 +1,23 @@
-<div class="center hero-unit">
-  <h1>Roller</h1>
+<div class=" hero-unit">
+  <h2 class="center">
+    Load a Video to Start Rolling
+  </h2>
+  <div class="controls controls-row">
+      <input class="span8" id="youtube_url" type="text" value="http://www.youtube.com/watch?v=DE9NsrKzSq8" >
+      <button id="load-video-btn" type="button" class="btn span2" >Load Video</button>
+  </div>
 
-  <form action="">
-      <input id="youtube_url" type="text" value="http://www.youtube.com/watch?v=DE9NsrKzSq8" class="xxlarge">
-      <button id="load-video-btn" type="button" class="btn">Load Video</button>
-  </form>
+  <div class="ytplayer-wrapper">
+    <div id="player"></div>    
+  </div>
+  
+  <div id="slider-range" class="medium"></div>
 
-  <div id="player"></div>
-  <div id="slider-range" class="medium"></div><div id="echo"></div>
-  <div id="current-time"></div>
+  <div class="video-info">
+    <div id="echo"></div>
+    <div id="current-time"></div>    
+  </div>
+
 
   <%= form_for @video do |f| %>
       <%= f.text_field :name, :placeholder => "Give your clip a name" %> <br />
@@ -17,8 +26,6 @@
       <%= f.hidden_field :end_time, :value => 475 %> <br />
       <%= f.submit %>
   <% end %>
-
-  <%= link_to "All Videos", videos_path %>
 
 </div>
 

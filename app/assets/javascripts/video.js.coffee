@@ -6,11 +6,6 @@ $ ->
   updateTime = ->
     $("#current-time").html(formatTime(myPlayer.getCurrentTime()))
 
-  elements =
-    player : null
-    slider : null
-    start  : null
-    end    : null
 
   
 
@@ -36,7 +31,6 @@ $ ->
 
 
   sliderChange = (event, ui) ->
-    console.log event
     start = ui.values[0]
     end = ui.values[1]
     $("#video_start_time").val(start)

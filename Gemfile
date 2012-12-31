@@ -41,14 +41,14 @@ end
 # in production environments by default.
 group :assets do
 
-  gem 'jquery-ui-bootstrap-rails'
+  	gem 'jquery-ui-bootstrap-rails'
     gem 'sass-rails',   '~> 3.2.5'
     gem 'coffee-rails', '~> 3.2.2'
     gem 'uglifier', '>= 1.2.4'
     gem 'bootstrap-sass', :git => "git://github.com/thomas-mcdonald/bootstrap-sass.git"
 
-  # See github://https.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', :platforms => :ruby
+	# See github://https.com/sstephenson/execjs#readme for more supported runtimes
+	gem 'therubyracer', :platforms => :ruby
 
 end
 
@@ -71,3 +71,5 @@ gem 'jquery-rails'
 
 
 gem "heroku"
+
+gem 'will_paginate', '~> 3.0'

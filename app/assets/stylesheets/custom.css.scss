@@ -1,14 +1,45 @@
-$navbarBackground: #555;
-$navbarBackgroundHighlight: #888;
-$navbarText: #eee;
-$navbarLinkColor: #000;
-
-
 @import "bootstrap";
 
 body { padding-top: 60px; }
 
 
-@import "bootstrap-responsive";
+// @import "bootstrap-responsive";
+
+.center {
+  text-align: center;
+}
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #999;
+}
+
+footer a {
+  color: #555;
+}  
+
+footer a:hover { 
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 10px;
+}
 
 
+.ytplayer-wrapper {
+  margin: 0 auto;
+  text-align: center;
+}
