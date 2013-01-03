@@ -7,4 +7,5 @@
 #
 #=require jquery
 #=require roll_player
+#=require swfobject
 #=require_tree .

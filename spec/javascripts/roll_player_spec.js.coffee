@@ -2,6 +2,8 @@ describe "RollPlayer", ->
     json_response = null
 
     beforeEach ->
+        loadFixtures 'baz'
+
         json_response =
             apiVersion: "2.1"
             data:
@@ -51,40 +53,48 @@ describe "RollPlayer", ->
 
 
     it "parses valid video ID from youtube url", ->
-        player = new RollPlayer("http://www.youtube.com/watch?v=ES-Y5XBKDNc")
+        player = new RollPlayer(
+            youtube_url: "http://www.youtube.com/watch?v=ES-Y5XBKDNc"
+            container_element: "player"
+            player_id: "ytPlayer"
+        )
+        
         expect(player.youtubeID).toBe("ES-Y5XBKDNc")
 
     it "throws exception on invalid url", ->
         # expect((new RollPlayer("http://wwe.com/watch?v=ESBKDNc")).toThrow(new Error("invalid url")))
 
-    it "ajax calls", ->
-        # spyOn($, 'getJSON')
-        # callback = jasmine.createSpy()
-
-        # expect(callback).not.toHaveBeenCalled()
-
-        # responseData = {"property1":"value1", "array1":[1,2,3]}
-
-        # $.getJSON.mostRecentCall.args[0]("responseData")
-        # expect(callback).toHaveBeenCalledWith(responseData);
-
-
+    it "should successful set youtube_id and duration through ajax calls", ->
         spyOn($, "getJSON").andCallFake (url, callback) ->
             callback json_response
-        
 
-        player = new RollPlayer("http://www.youtube.com/watch?v=ES-Y5XBKDNc")
+        player = new RollPlayer(
+            youtube_url: "http://www.youtube.com/watch?v=ES-Y5XBKDNc"
+            container_element: "player"
+            player_id: "ytPlayer"
+        )
+    
         expect(player.duration).toBe(450)        
 
-    it "alters HTML document on creation", ->
+    it "loads swf object into the HTML document on creation", ->
         loadFixtures 'baz'
-        player = new RollPlayer("http://www.youtube.com/watch?v=ES-Y5XBKDNc")
+        player = new RollPlayer(
+            youtube_url: "http://www.youtube.com/watch?v=ES-Y5XBKDNc"
+            container_element: "player"
+            player_id: "ytPlayer"
+        )
 
-        expect($('#player')).toContain('iframe')
+        # Checks that SWF object loaded
+        expect($('#ytPlayer').prop('tagName')).toBe('OBJECT')
+        expect($('#ytPlayer').prop('type')).toBe('application/x-shockwave-flash')
+
+        
+        playState = $('#ytPlayer')[0].getPlayerState()
+        expect(playState).toBe(1)
 
 
-    it "gets correct duration of the clip", ->
-        yt_player = new RollPlayer({"youtube_url": youtube_url, "player_id": player_id, "container_element": "videoDiv"})
+
+
 
 
 
