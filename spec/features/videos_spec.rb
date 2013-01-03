@@ -6,7 +6,7 @@ feature "site navigation" do
   it "should be able to navigate from home to videos and back" do
   	visit root_path
   	click_link('All Videos')
-    current_path.should == videos_path
+    current_path.should eq videos_path
     click_link('Home')
     current_path.should == root_path
   end

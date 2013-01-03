@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    title YouTube Player API Tutorial
+    script src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"
+    = javascript_include_tag "application", "http://www.google.com/jsapi"
+    = csrf_meta_tags
+  body
+    #player
+
+coffee:
+  yt_player = new YouTubePlayer({"player_id": player_id, "container_element": "videoDiv"})
+  

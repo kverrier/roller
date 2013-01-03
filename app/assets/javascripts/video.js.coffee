@@ -6,16 +6,13 @@ $ ->
   updateTime = ->
     $("#current-time").html(formatTime(myPlayer.getCurrentTime()))
 
-
-  
-
   done = false
   timer = null
   myPlayer = null
 
   id = $("#video_youtube_id").val()
   url = "http://gdata.youtube.com/feeds/api/videos?q="+id+"&max-results=1&v=2&alt=jsonc"
-  $.getJSON url, (response) ->
+  $.getJSON url, data, (data, response) ->
     duration = response.data.items[0].duration
     $("#slider-range").slider
       orientation: "horizontal"
@@ -27,8 +24,6 @@ $ ->
         clearTimeout(timer)
         $("#echo").html "" + formatTime(ui.values[0]) + " - " + formatTime(ui.values[1])
       change: sliderChange
-
-
 
   sliderChange = (event, ui) ->
     start = ui.values[0]
@@ -58,20 +53,21 @@ $ ->
 
 
   window.onYouTubeIframeAPIReady = ->
-    myPlayer = new YT.Player("player",
-      height: "390"
-      width: "640"
-      videoId: "DE9NsrKzSq8"
-      playerVars:
-        'autoplay': 0
-        'controls': 0
-        'wmode': 'opaque'
-        'showinfo': 0
-        'autohide': 0
-      events:
-        'onReady': onPlayerReady
-        'onStateChange': onPlayerStateChange
-    )
+    $("#player") = "changed"
+    # myPlayer = new YT.Player("player",
+    #   height: "390"
+    #   width: "640"
+    #   videoId: "DE9NsrKzSq8"
+    #   playerVars:
+    #     'autoplay': 0
+    #     'controls': 0
+    #     'wmode': 'opaque'
+    #     'showinfo': 0
+    #     'autohide': 0
+    #   events:
+    #     'onReady': onPlayerReady
+    #     'onStateChange': onPlayerStateChange
+    # )
     return
 
   window.onPlayerReady = (event) ->

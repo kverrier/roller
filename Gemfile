@@ -15,6 +15,8 @@ group :development, :test do
 	gem "rspec-expectations", :git => "git://github.com/rspec/rspec-expectations.git"
 	gem "rspec-mocks",        :git => "git://github.com/rspec/rspec-mocks.git"
 	gem 'spork', '0.9.2'
+	gem "jasminerice"
+
 
 end
 
@@ -24,13 +26,11 @@ group :test do
 	gem "capybara"
   	gem "database_cleaner"
 	gem 'launchy'
-	gem 'rb-fchange', '0.0.5'
-  	gem 'rb-notifu', '0.0.4'
-  	gem 'win32console', '1.3.0'
+	#gem 'rb-fchange', '0.0.5'
+  	#gem 'rb-notifu', '0.0.4'
+  	#gem 'win32console', '1.3.0'
 
 end
-
-
 
 group :production do
 	gem 'pg'
@@ -48,7 +48,7 @@ group :assets do
     gem 'bootstrap-sass', :git => "git://github.com/thomas-mcdonald/bootstrap-sass.git"
 
 	# See github://https.com/sstephenson/execjs#readme for more supported runtimes
-	gem 'therubyracer', :platforms => :ruby
+	#gem 'therubyracer', :platforms => :ruby
 
 end
 
