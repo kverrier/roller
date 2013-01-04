@@ -4,12 +4,15 @@
 
 $ ->
   player = new RollPlayer(
-    youtube_url: "http://www.youtube.com/watch?v=ES-Y5XBKDNc"
+    youtube_url: "http://www.youtube.com/watch?v=DE9NsrKzSq8"
     container_element: "player"
-    player_id: "ytPlayer"
+    player_id: "ytPlayer",
+    -> console.log('callback')
   )
 
-  
+
+
+
 
 
 

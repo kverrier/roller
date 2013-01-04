@@ -13,5 +13,6 @@
 //= require jquery
 //= require jquery-ui
 //= require jquery_ujs
+//= require jQuery.tubeplayer.min.js
 //= require bootstrap
 //= require_tree .
