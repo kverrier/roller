@@ -2,7 +2,7 @@ class @RollPlayer
     constructor: (options, readyCallback) ->
         @youtubeID = parseYoutubeUrl(options['youtube_url'])
         @duration  = getYoutubeDuration(@youtubeID)
-
+       
         $videoContainter = $("#"+options['container_element'])
 
         $videoContainter.tubeplayer(
@@ -21,13 +21,31 @@ class @RollPlayer
 
         ### Executes when YouTube video player is ready ###
         $.tubeplayer.defaults.afterReady = ($player) =>
+            options['start_time'] ?= 0
+            options['end_time'] ?= $videoContainter.tubeplayer("data").duration
+            @startTime = options['start_time']
+            @endTime   = options['end_time']
+
             $("#slider").slider
                 orientation: "horizontal"
                 min: 0
-                value: 0
+                value: @startTime
                 max: $videoContainter.tubeplayer("data").duration
                 slide: (event, ui) ->
                 change: (event, ui) -> 
+                start: (event, ui) ->
+                stop: (event, ui) ->
+
+            $("#slider-range").slider
+                orientation: "horizontal"
+                range: true
+                min: 0
+                values: [@startTime, @endTime]
+                max: $videoContainter.tubeplayer("data").duration
+                slide: (event, ui) =>
+                    @startTime = ui.values[0]
+                    @endTime   = ui.values[1]
+                change: (event, ui) ->
                 start: (event, ui) ->
                 stop: (event, ui) ->
 
@@ -38,8 +56,8 @@ class @RollPlayer
                 clearInterval(updatePlayheadTimer)
 
             $("#slider").on "slidestop", ->
-                viseekto = $("#slider").slider("value")
-                $videoContainter.tubeplayer("seek", viseekto)
+                seekToTime = $("#slider").slider("value")
+                $videoContainter.tubeplayer("seek", seekToTime)
                 updatePlayheadTimer = window.setInterval (->
                     seektime = $videoContainter.tubeplayer("data").currentTime
                     $("#slider").slider('value', seektime)
@@ -50,9 +68,16 @@ class @RollPlayer
                 $("#slider").slider('value', seektime)
             ), 1000
 
+            window.setInterval ( =>
+                if $videoContainter.tubeplayer("data").currentTime < @startTime
+                    $videoContainter.tubeplayer("seek", @startTime)
+                if $videoContainter.tubeplayer("data").currentTime > @endTime
+                    $videoContainter.tubeplayer("pause")
+                    $videoContainter.tubeplayer("seek", @endTime - 1)
+            ), 1000
+
             ### Fire ready callback ###
             readyCallback()
-
 
         ### Set up buttons for controlling the video ###
         $(".play").click ->
@@ -85,3 +110,4 @@ class @RollPlayer
             if json_resp
                 duration = 450 #json_resp.data.items[0].duration
     
+
