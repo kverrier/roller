@@ -1,5 +1,5 @@
 <li class="video-item">
-  <h4><%= video.name %></h4>
+  <h4><%= link_to video.name, video_path(video.id) %></h4>
   <p>
     <span class="timestamp">
     Posted <%= time_ago_in_words(video.created_at) %> ago.

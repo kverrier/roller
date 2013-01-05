@@ -1,15 +1,50 @@
-@import "bootstrap";
 
-body { padding-top: 60px; }
+@import "bootstrap";
+@import "bootstrap/mixins";
+
+
+body { padding-top: 40px; }
+
+.content {
+}
 
 
 // @import "bootstrap-responsive";
 
-@center
-
 .center {
   text-align: center;
 }
+
+.loud {
+  color: red;
+  font-weight: bold;
+}
+
+
+/* Forms */
+form {
+  @include center-block;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  #video_name {
+    text-align: center;
+  }
+
+}
+
+/* Video List */
+
+.videos {
+  list-style: none;
+
+  li {
+    // display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
 
 footer {
   margin-top: 45px;
@@ -44,3 +79,4 @@ footer ul li {
   margin: 0 auto;
   text-align: center;
 }
+
