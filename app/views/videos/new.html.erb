@@ -6,20 +6,16 @@
     </div>
   </form>
 
-  <div id="video-controls"></div>
-
+  <div id="video"></div>
   <div id="slider"></div>
-
-
-  <div class="ytplayer-wrapper">
-    <div id="player"></div>    
+  <div id="controls">
+    <button class='play btn'>PLAY</button>
+    <button class='pause btn'>PAUSE</button>
   </div>
-  <div class="roll-controls">
-      <div class="video-info">
-        <div id="echo"></div>
-        <div id="current-time"></div>    
-      </div>
-    <%= content_tag :a, (content_tag :i, "Play Clip", :class => "icon-play"), :class => "btn play-clip"%> 
+  <div id='info'>
+    Start: <span class="start-time">--:--</span> <br>
+    Current: <span class="current-time">--:--</span> <br>
+    End: <span class="end-time">--:--</span>
   </div>
 
   <%= form_for @video do |f| %>
