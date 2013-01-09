@@ -76,10 +76,19 @@ class @RollPlayer
                     $videoContainter.tubeplayer("seek", @endTime - 1)
             ), 1000
 
+            ### Set up buttons for controlling the video ###
+            $(".play-clip").click( =>
+                console.log @startTime
+                $videoContainter.tubeplayer("seek", @startTime)
+                $videoContainter.tubeplayer("play")
+            )
+
             ### Fire ready callback ###
             readyCallback()
 
-        ### Set up buttons for controlling the video ###
+       
+
+
         $(".play").click ->
             $("#youtube-player-container").tubeplayer "play"
 

@@ -6,7 +6,10 @@
 # IT IS UNLIKELY THAT YOU WILL NEED TO CHANGE THIS FILE
 #
 #=require jquery
+#=require jquery-ui
 #=require jQuery.tubeplayer.min.js
 #=require roll_player
-#s=require swfobject
+#=require roll_ui
+#=require player_with_states
+#=require swfobject
 #=require_tree .
