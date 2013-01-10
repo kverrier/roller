@@ -8,5 +8,3 @@ class R.Views.VideoInfo extends Backbone.View
 			$('.end-time').text(Window.formatTime(@model.get 'end'))
 
 		), 33.33
-
-		console.log 'prints'

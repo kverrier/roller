@@ -11,15 +11,16 @@
 <body>
 
 
-<div class="container">
-	<%= render 'layouts/header' %>
-	<hr>
-	<div class="content">
-		<%= yield %>
-	</div>
-    <%= render 'layouts/footer' %>
-</div>
+  <div class="container">
+    <div>
+      <%= render 'layouts/header' %>
+    </div>
+    <hr>
+    <div class="content">
+     <%= yield %>
+   </div>
+   <%= render 'layouts/footer' %>
+ </div>
 
 </body>
 </html>
- 

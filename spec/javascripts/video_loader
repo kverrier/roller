@@ -1,0 +1,10 @@
+class R.Views.VideoLoader extends Backbone.View
+
+	initialize: ->
+		_.bindAll @
+
+	events:
+		'click .load-video': 'updateYoutubeId'
+
+	updateYoutubeId: ->
+		console.log $('#youtube_url').val()

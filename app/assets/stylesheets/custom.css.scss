@@ -1,9 +1,23 @@
+// $iconSpritePath: asset-url('glyphicons-halflings.png', image);
+// $iconWhiteSpritePath: asset-url('glyphicons-halflings-white.png', image);
 
 @import "bootstrap";
+
+
 @import "bootstrap/mixins";
 
 
 body { padding-top: 40px; }
+
+.logo {
+  text-align: center;
+}
+
+.logo {
+  padding: 0;
+  margin: 0;
+}
+
 
 .content {
 }
@@ -14,16 +28,8 @@ body { padding-top: 40px; }
   text-align: center;
 }
 
-.loud {
-  color: red;
-  font-weight: bold;
-}
-
-.controls {
-  text-align: center;
-  .play-clip {
-    margin-top: 10px;
-  }
+#controls {
+  padding: 20px 0;
 }
 
 /* Forms */
@@ -31,7 +37,7 @@ form {
   @include center-block;
   padding-top: 20px;
   padding-bottom: 20px;
-  text-align: center;
+  // text-align: center;
   #video_name {
     text-align: center;
   }
@@ -63,6 +69,10 @@ form {
 }
 
 
+.pagination{
+
+}
+
 footer {
   margin-top: 45px;
   padding-top: 5px;
@@ -90,10 +100,5 @@ footer ul {
 footer ul li {
   float: left;
   margin-left: 10px;
-}
-
-.ytplayer-wrapper {
-  margin: 0 auto;
-  text-align: center;
 }
 

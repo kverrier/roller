@@ -1,32 +1,64 @@
-<div class=" hero-unit">
-  <form action="">
-    <div class="controls controls-row">
-        <input class="span8" id="youtube_url" type="text" value="http://www.youtube.com/watch?v=DE9NsrKzSq8" >
-        <button id="load-video-btn" type="button" class="btn span2" >Load Video</button>
+<div class="row">   
+  <div class="span16">
+
+    <div class=" hero-unit">
+      <div class="row">
+        <div class="offset2">
+          <div class="controls controls-row" id="video-loader">
+            <input class="span8" id="youtube_url" type="text" value="http://www.youtube.com/watch?v=DE9NsrKzSq8" >
+            <button class="btn span2 load" type='text' id="load-video">Load Video</button>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div id="video" class="span10 offset2"></div>
+      </div>
+
+      <div class="row">
+        <div class="span10 offset2">
+          <div id="slider"></div>
+        </div>
+      </div> <!-- end row -->
+
+      <div class="row" id='controls'>       
+        <div id="buttons" class="span2 offset5">
+          <!-- <a href="#" class="play btn btn-large span2">PLAY<i class="icon-play"></i></a> -->
+          <div class="row">
+            <button class='play btn span2' >PLAY</button>
+          </div>
+
+          <div class="row">
+            <button class='restart btn span2' >RESTART</button>
+          </div>
+
+
+        </div>
+        <span id='info' class='span4'>
+          Start: <span class="start-time">--:--</span> <br>
+          Current: <span class="current-time">--:--</span> <br>
+          End: <span class="end-time">--:--</span>
+        </span>
+
+      </div> <!-- end row -->
+
+      <div class="row">
+        <div class="offset3">
+          <%= form_for @video do |f| %>
+          <%= f.hidden_field :youtube_id, :value => "DE9NsrKzSq8" %>
+          <%= f.hidden_field :start_time, :value => 470 %>
+          <%= f.hidden_field :end_time, :value => 475 %>
+          <div class="row-controls">
+          <%= f.text_field :name, :placeholder => "Give your clip a name", :class => "span4" %>
+          <%= f.submit 'Create Clip', :class => 'btn btn-primary span4' %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+
+
+
     </div>
-  </form>
-
-  <div id="video"></div>
-  <div id="slider"></div>
-  <div id="controls">
-    <button class='play btn'>PLAY</button>
-    <button class='pause btn'>PAUSE</button>
   </div>
-  <div id='info'>
-    Start: <span class="start-time">--:--</span> <br>
-    Current: <span class="current-time">--:--</span> <br>
-    End: <span class="end-time">--:--</span>
-  </div>
-
-  <%= form_for @video do |f| %>
-      <%= f.text_field :name, :placeholder => "Give your clip a name" %> <br />
-      <%= f.hidden_field :youtube_id, :value => "DE9NsrKzSq8" %> <br />
-      <%= f.hidden_field :start_time, :value => 470 %> <br />
-      <%= f.hidden_field :end_time, :value => 475 %> <br />
-      <%= f.submit 'Create my Clip', :class => 'btn btn-info' %>
-  <% end %>
-
 </div>
-
-
-

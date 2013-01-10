@@ -75,3 +75,5 @@ gem 'will_paginate', '~> 3.0'
 gem 'jquery-ui-bootstrap-rails'
 
 gem 'backbone-on-rails'
+
+gem 'bootstrap-will_paginate'
