@@ -14,8 +14,8 @@ body { padding-top: 40px; }
 }
 
 .logo {
-  padding: 0;
-  margin: 0;
+  // padding: 0;
+  // margin: 0;
 }
 
 
@@ -25,7 +25,7 @@ body { padding-top: 40px; }
 // @import "bootstrap-responsive";
 
 .center {
-  text-align: center;
+ text-align: center;
 }
 
 #controls {
@@ -44,17 +44,79 @@ form {
 
 }
 
-/* Slider */
+/*** Slider Style ***/
 
-.start {
-  // background:  url(http://cdn.sstatic.net/stackoverflow/img/sprites.png?v=5) no-repeat;
-  // background:  #000;
-  // height: 100px;
-  // width: 100px;
-  // position: absolute;
-  // border-style:none;
-  // margin-left: -9px;
+/*the slider background*/
+#slider {
+  // width:230px;
+  height:11px;
+  // background:url(http://papermashup.com/demos/jquery-slider-bar/slider-bg.png);
+  position:relative;
+  margin:0;
+  padding:0 10px;
+  // border: 0;
 }
+
+
+.ui-slider-horizontal .current {
+  width:24px;
+  height:24px;
+  position:absolute;
+  top:-7px;
+  margin-left:-12px;
+  z-index: 200;
+  background-color:transparent;
+  background-image: url('http://papermashup.com/demos/jquery-slider-bar/slider-button.png');
+  background-repeat: no-repeat;
+  border: 0;
+}
+
+.ui-slider-horizontal .start {
+  position:absolute;
+  top:10px;
+  margin-left:-10.0px;
+  background-color:transparent;
+  background-image: url('http://i.imgur.com/M0JG0v3.png');
+  background-repeat: no-repeat;
+  border: 0;
+  z-index: 200;
+}
+
+.ui-slider-horizontal .end {
+  position:absolute;
+  top:10px;
+  margin-left:-10.0px;
+  background-color:transparent;
+  background-image: url('http://i.imgur.com/M0JG0v3.png');
+  background-repeat: no-repeat;
+  border: 0;
+  z-index: 200;
+}
+
+
+// .ui-slider-horizontal .start {
+//   position:absolute;
+//   top:10px;
+//   margin-left:-10.0px;
+//   background-color:transparent;
+//   background-image: url('http://i.imgur.com/M0JG0v3.png');
+//   background-repeat: no-repeat;
+//   border: 0;
+//   z-index: 200;
+// }
+
+// .ui-slider-horizontal .end {
+//   position:absolute;
+//   top:10px;
+//   margin-left:-10.0px;
+//   background-color:transparent;
+//   background-image: url('http://i.imgur.com/M0JG0v3.png');
+//   background-repeat: no-repeat;
+//   border: 0;
+//   z-index: 200;
+// }
+
+
 
 /* Video List */
 
@@ -100,5 +162,9 @@ footer ul {
 footer ul li {
   float: left;
   margin-left: 10px;
+}
+
+.videos{
+  margin: 0;
 }
 

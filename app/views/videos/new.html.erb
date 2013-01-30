@@ -1,36 +1,33 @@
 <div class="row">   
-  <div class="span16">
+  <div class="span12">
 
-    <div class=" hero-unit">
-      <div class="row">
+    <div class="row">
         <div class="offset2">
           <div class="controls controls-row" id="video-loader">
-            <input class="span8" id="youtube_url" type="text" value="http://www.youtube.com/watch?v=DE9NsrKzSq8" >
+            <input class="span6" id="youtube_url" type="text" value="http://www.youtube.com/watch?v=DE9NsrKzSq8" >
             <button class="btn span2 load" type='text' id="load-video">Load Video</button>
           </div>
         </div>
+        
       </div>
 
 
       <div class="row">
-        <div id="video" class="span10 offset2"></div>
+        <div id="video" class="span8 offset2"></div>
       </div>
 
       <div class="row">
-        <div class="span10 offset2">
+        <div class="span8 offset2">
           <div id="slider"></div>
         </div>
       </div> <!-- end row -->
 
-      <div class="row" id='controls'>       
-        <div id="buttons" class="span2 offset5">
-          <!-- <a href="#" class="play btn btn-large span2">PLAY<i class="icon-play"></i></a> -->
-          <div class="row">
-            <button class='play btn span2' >PLAY</button>
-          </div>
 
+      <div class="row" id='controls'>       
+        <div id="buttons" class="span2 offset4">
           <div class="row">
-            <button class='restart btn span2' >RESTART</button>
+            <button class='play btn btn-large' ><i class="icon-play"></i></button>
+            <button class='restart btn btn-large ' ><i class="icon-repeat"></i></button>
           </div>
 
 
@@ -44,14 +41,14 @@
       </div> <!-- end row -->
 
       <div class="row">
-        <div class="offset3">
+        <div class="offset2">
           <%= form_for @video do |f| %>
           <%= f.hidden_field :youtube_id, :value => "DE9NsrKzSq8" %>
           <%= f.hidden_field :start_time, :value => 470 %>
           <%= f.hidden_field :end_time, :value => 475 %>
-          <div class="row-controls">
-          <%= f.text_field :name, :placeholder => "Give your clip a name", :class => "span4" %>
-          <%= f.submit 'Create Clip', :class => 'btn btn-primary span4' %>
+          <div class="controls controls-row">
+            <%= f.text_field :name, :placeholder => "Give your clip a name", :class => "span4" %>
+            <%= f.submit 'Create Clip', :class => 'btn btn-primary span4 ' %>
           </div>
           <% end %>
         </div>
@@ -59,6 +56,5 @@
 
 
 
-    </div>
   </div>
 </div>

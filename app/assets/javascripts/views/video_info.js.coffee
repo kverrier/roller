@@ -3,8 +3,8 @@ class R.Views.VideoInfo extends Backbone.View
 		_.bindAll @
 
 		setInterval (=>
-			$('.start-time').text(Window.formatTime(@model.get 'start'))
+			$('.start-time').text(Window.formatTime(@model.get 'pendingStart'))
 			$('.current-time').text(Window.formatTime(@model.get 'current'))
-			$('.end-time').text(Window.formatTime(@model.get 'end'))
+			$('.end-time').text(Window.formatTime(@model.get 'pendingEnd'))
 
 		), 33.33

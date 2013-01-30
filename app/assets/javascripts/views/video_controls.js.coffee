@@ -11,14 +11,14 @@ class R.Views.VideoControls extends Backbone.View
 		@render()
 
 	render: () =>
-		$('.play').html('PAUSED')
+		$('.play').html('<i class="icon-play">')
 		switch @model.get('state')
 			when 'paused'
 				$button = $('.play')
-				$button.html('PLAY')
+				$button.html('<i class="icon-play">')
 			when 'playing'
 				$button = $('.play')
-				$button.html('PAUSE')
+				$button.html('<i class="icon-pause">')
 
 
 		$('.play').addClass(@model.get('state'))
@@ -42,4 +42,5 @@ class R.Views.VideoControls extends Backbone.View
 	restart: =>
 		@model.set 'cue', @model.get('start')
 		@model.trigger 'change:cue'
+		@model.set('state', 'play')
 

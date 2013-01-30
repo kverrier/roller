@@ -44,6 +44,8 @@ group :assets do
     gem 'coffee-rails', '~> 3.2.2'
     gem 'uglifier', '>= 1.2.4'
     gem 'bootstrap-sass', :git => "git://github.com/thomas-mcdonald/bootstrap-sass.git"
+    gem 'font-awesome-sass-rails'
+
 
 	# See github://https.com/sstephenson/execjs#readme for more supported runtimes
 	#gem 'therubyracer', :platforms => :ruby
@@ -72,7 +74,7 @@ gem "heroku"
 
 gem 'will_paginate', '~> 3.0'
 
-gem 'jquery-ui-bootstrap-rails'
+# gem 'jquery-ui-bootstrap-rails'
 
 gem 'backbone-on-rails'
 
