@@ -42,5 +42,5 @@ class R.Views.VideoControls extends Backbone.View
 	restart: =>
 		@model.set 'cue', @model.get('start')
 		@model.trigger 'change:cue'
-		@model.set('state', 'play')
+		@model.set('state', 'playing')
 
