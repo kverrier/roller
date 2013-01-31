@@ -16,8 +16,15 @@ group :development, :test do
 	gem "rspec-mocks",        :git => "git://github.com/rspec/rspec-mocks.git"
 	gem 'spork', '0.9.2'
 	gem "jasminerice"
+	gem 'guard'
+	gem 'guard-jasmine'
+end
 
-
+group :development do
+  # gem 'rb-inotify', :require => false
+  gem 'rb-fsevent'
+  # gem 'rb-fchange', :require => false
+  gem 'ruby_gntp'
 end
 
 group :test do
@@ -79,3 +86,4 @@ gem 'will_paginate', '~> 3.0'
 gem 'backbone-on-rails'
 
 gem 'bootstrap-will_paginate'
+gem 'rb-readline'

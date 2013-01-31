@@ -3,7 +3,6 @@ class R.Views.SliderView extends Backbone.View
 	initialize: ->
 		_.bindAll @
 
-
 		@current = @start
 
 		$(@el).slider
@@ -95,7 +94,10 @@ class R.Views.SliderView extends Backbone.View
 		@userIsChangingCurrent = !@userIsChangingCurrent
 
 	updateStart: (event, ui) ->
-		@model.set {start: ui.value, cue: ui.value}
+		if ui.value > ui.values[2]
+			@model.set {start: ui.value[2], cue: ui.value}
+		else
+			@model.set {start: ui.value, cue: ui.value}
 
 	updateCue: (event, ui) =>
 		if ui.value < ui.values[0]
@@ -118,5 +120,7 @@ class R.Views.SliderView extends Backbone.View
 		# 	@model.set {cue: ui.values[0]}
 		# 	@model.set {current: ui.values[0]}
 
-	updateEnd: (event, ui) ->
+	updateEnd: (event, ui) =>
+		console.log @model
+		console.log 'test'
 		@model.set {end: ui.value, cue: ui.value - 3}
