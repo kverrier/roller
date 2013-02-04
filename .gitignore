@@ -22,3 +22,4 @@ doc/
 .DS_Store
 bundler_stubs/
 *sublime*
+.idea/
