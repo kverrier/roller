@@ -52,8 +52,8 @@ describe "slider", ->
 				expect(videoModel.get('cue')).toBe(67)
 
 		describe 'current slider', ->
-			it 'sets model end on end slider action', ->
-				$('#slider').trigger('playHeadChange', {value: 60, values: [40, 40, 70] })	
+			it 'sets model cue on play slider action', ->
+				$('#slider').trigger('playHeadChange', {value: 30, values: [30, 30, 43] })	
 				expect(videoModel.get('play')).toBe(70)
 
 			it 'sets model cue on start slider action', ->

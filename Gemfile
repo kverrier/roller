@@ -9,6 +9,7 @@ gem 'rails', '3.2.11'
 
 group :development, :test do
 	gem 'sqlite3'
+
 	gem "rspec-rails",        :git => "git://github.com/rspec/rspec-rails.git"
 	gem "rspec",              :git => "git://github.com/rspec/rspec.git"
 	gem "rspec-core",         :git => "git://github.com/rspec/rspec-core.git"
@@ -25,6 +26,7 @@ group :development do
   gem 'rb-fsevent'
   # gem 'rb-fchange', :require => false
   gem 'ruby_gntp'
+  gem 'guard-rspec'
 end
 
 group :test do
@@ -87,3 +89,5 @@ gem 'backbone-on-rails'
 
 gem 'bootstrap-will_paginate'
 gem 'rb-readline'
+
+
